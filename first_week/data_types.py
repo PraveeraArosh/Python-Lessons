@@ -20,8 +20,15 @@
 
 # print("New")
 
-l1=[1,2,3,"arosh",0.0]
-print(l1[3])
+# l1=[1,2,3,"arosh",0.0]
+# print(l1[3])
+# print(l1[0:4])
+
+# print(len(l1))
+
+# Tuple
+tuple1=(1,2,3,4,5)
+print(tuple1)
 
 
 
