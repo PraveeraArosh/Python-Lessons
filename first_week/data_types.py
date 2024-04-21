@@ -60,4 +60,11 @@ list.append(dic)
 list.append(dic2)
 print(list)
 
+import pandas as pd
+
+dataframe= pd.DataFrame(list)
+print(dataframe.head())
+print(dataframe.tail())
+print(type(dataframe))
+
 
