@@ -7,7 +7,7 @@ from flask import Flask, render_template, request
 from chat import get_response, bot_name
 
 app = Flask(__name__)
-
+#annotations
 @app.route("/")
 def home():
     return render_template("index.html")

@@ -4,7 +4,7 @@ nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
 stemmer = PorterStemmer()
 
-def tokenize(sentence):
+def tokenize(sentence): # String type
     """
     split sentence into array of words/tokens
     a token can be a word or punctuation character, or number
@@ -12,7 +12,7 @@ def tokenize(sentence):
     return nltk.word_tokenize(sentence)
 
 
-def stem(word):
+def stem(word): # find root word
     """
     stemming = find the root form of the word
     examples:
@@ -35,7 +35,7 @@ def bag_of_words(tokenized_sentence: list, words:list)-> list:
     # stem each word
     sentence_words = [stem(word) for word in tokenized_sentence]
     # initialize bag with 0 for each word
-    bag = np.zeros(len(words), dtype=np.float32)
+    bag = np.zeros(len(words), dtype=np.float32) # mapping bag of words with numeric word and relevant word
     for idx, w in enumerate(words):
         if w in sentence_words: 
             bag[idx] = 1

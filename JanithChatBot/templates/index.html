@@ -27,31 +27,32 @@
 </div>
 </div>
 
-<script>
+<script> //Jquert function
     $(document).ready(function() {
-        $("form").on("submit", function(event) {
-            var rawText = $("#text").val();
-            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-            $("#text").val("");
-            $("#chatbox").append(userHtml);
+        $("form").on("submit", function(event) { //Click submit button
+            var rawText = $("#text").val(); // Get text value
+            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>"; //append html
+            $("#text").val(""); // clear text
+            $("#chatbox").append(userHtml); // javascript + user html
             document.getElementById("userInput").scrollIntoView({
                 block: "start",
                 behavior: "smooth",
             });
-            $.ajax({
+            $.ajax({ // no refreshment & get response
                 data: {
                     msg: rawText,
                 },
-                type: "POST",
+                type: "POST", // Method
                 url: "/get",
-            }).done(function(data) {
+            }).done(function(data) { // if call success     // Pattern
                 var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-                $("#chatbox").append($.parseHTML(botHtml));
+                $("#chatbox").append($.parseHTML(botHtml)); // append response into chatbot
                 document.getElementById("userInput").scrollIntoView({
                     block: "start",
                     behavior: "smooth",
                 });
             });
+            
             event.preventDefault();
         });
     });
